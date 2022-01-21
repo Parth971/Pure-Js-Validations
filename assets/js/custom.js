@@ -169,6 +169,7 @@ function validate() {
                <th>`+ allElementArr[i].placeholder + `</th>
                <th>`+ allElementArr[i].value + `</th>
              </tr>`;
+               allElementArr[i].value = ""
           }
           // FOR IMAGE DATA RETRIVAL
           let pathArr = image.value.split("\\")
@@ -176,17 +177,21 @@ function validate() {
                <th> Image </th>
                <th>`+ pathArr[pathArr.length - 1] + `</th>
              </tr>`;
+          image.value = "";
           // FOR HOBBY DATA RETRIVAL
           innerText += `<tr>
                <th> Hobby </th>
                <th>`+ hobby.value + `</th>
              </tr>`;
+          hobby.value = "";
           // FOR GENDER DATA RETRIVAL
           let gen = gender[0].checked ? "Male" : "Femal"
           innerText += `<tr>
                <th> Gender </th>
                <th>`+ gen + `</th>
              </tr>`;
+          gender[0].checked = false;
+          gender[1].checked = false;
           data.innerHTML = innerText;
           document.getElementById("overlay").style.display = "block";
      }
